@@ -11,11 +11,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <FullScreenVideo src="/mainVideo.mov" />
+      <FullScreenVideo src="/mainVideo.mp4" />
   
       <section className="flex flex-col md:flex-row items-start justify-between gap-12 py-10 max-w-screen-lg mx-auto">
         {/* Texto a la izquierda */}
-        <div className="max-w-lg space-y-6">
+        <div className="max-w-lg space-y-6 text-center">
           <span className={title({ color: "purple" })}>
             Be au pair of the world
           </span>
@@ -29,7 +29,7 @@ export default function Home() {
           </p>
         </div>
   
-        <div className="max-w-md w-full space-y-6">
+        <div className="max-w-md w-full space-y-6 text-center">
           <span className={title({ color: "pink" })}>
             ¿Qué es ser AU PAIR?
           </span>
