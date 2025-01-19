@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <FullScreenVideo src="/mainVideo.mp4" />
+      <FullScreenVideo src="https://res.cloudinary.com/dgs9eezlx/video/upload/v1737325977/mainVideo1_dhu60e.mp4" />
   
       <section className="flex flex-col md:flex-row items-start justify-between gap-12 py-10 max-w-screen-lg mx-auto">
         {/* Texto a la izquierda */}
