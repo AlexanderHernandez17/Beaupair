@@ -37,6 +37,31 @@ export default function AlemaniaHome() {
       image: "/tiquet.jpg",
     },
   ];
+
+  const paymentPlansData = [
+    {
+      name: "WHITE",
+      total: "$3.800.000",
+      payments: [
+        { title: "Matrícula y Test de Inglés", amount: "$600.000" },
+        {
+          title: "Activación de Perfil y Oficialización de Match",
+          amount: "$3.200.000",
+        },
+      ],
+    },
+    {
+      name: "RED",
+      total: "$4.500.000",
+      payments: [
+        { title: "Matrícula y Test de Inglés", amount: "$600.000" },
+        { title: "Activación de Perfil", amount: "$1.300.000" },
+        { title: "Oficialización del Match", amount: "$1.300.000" },
+        { title: "Pago Final", amount: "$1.300.000" },
+      ],
+    },
+  ];
+  
   
   return (
     <div className=" flex flex-col min-h-screen ">
@@ -75,12 +100,12 @@ export default function AlemaniaHome() {
 
          <div className="flex flex-col items-center justify-center mt-16">
           <div className="max-w-xl text-center">
-          <span className={title({ color: "pink" })}>TE OFRECEMOS 3 MODALIDADES DE PAGO&nbsp;</span>
+          <span className={title({ color: "pink" })}>TE OFRECEMOS 2 MODALIDADES DE PAGO&nbsp;</span>
          </div>
          </div>
 
          <div className="flex flex-col space-y-4 mt-16">
-        <PaymentPlans/>
+         <PaymentPlans plans={paymentPlansData} />
         </div>
         
         <div>

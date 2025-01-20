@@ -1,54 +1,29 @@
 "use client";
+
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // Solo `motion` para animaciones simples
+import { motion } from "framer-motion";
+
+interface Payment {
+  title: string;
+  amount: string;
+}
 
 interface PaymentPlan {
   name: string;
   total: string;
-  payments: { title: string; amount: string }[];
+  payments: Payment[];
 }
 
-const plans: PaymentPlan[] = [
-  {
-    name: "WHITE",
-    total: "$3.800.000",
-    payments: [
-      { title: "Matrícula y Test de Inglés", amount: "$600.000" },
-      {
-        title: "Activación de Perfil y Oficialización de Match",
-        amount: "$3.200.000",
-      },
-    ],
-  },
-  {
-    name: "PINK",
-    total: "$4.500.000",
-    payments: [
-      { title: "Matrícula y Test de Inglés", amount: "$600.000" },
-      { title: "Activación de Perfil", amount: "$1.300.000" },
-      { title: "Oficialización del Match", amount: "$1.300.000" },
-      { title: "Pago Final", amount: "$1.300.000" },
-    ],
-  },
-  {
-    name: "PURPLE",
-    total: "$5.900.000",
-    payments: [
-      { title: "Matrícula y Test de Inglés", amount: "$600.000" },
-      { title: "Iniciación Curso de Inglés", amount: "$1.400.000" },
-      { title: "Activación de Perfil", amount: "$1.250.000" },
-      { title: "Oficialización del Match", amount: "$1.250.000" },
-      { title: "Pago Final", amount: "$1.400.000" },
-    ],
-  },
-];
+interface PaymentPlansProps {
+  plans: PaymentPlan[];
+}
 
-const PaymentPlans = () => {
-  const [selectedPlanIndex, setSelectedPlanIndex] = useState(0); // Indice del plan seleccionado
+const PaymentPlans: React.FC<PaymentPlansProps> = ({ plans }) => {
+  const [selectedPlanIndex, setSelectedPlanIndex] = useState(0); // Índice del plan seleccionado
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-
+      {/* Botones de selección de plan */}
       <div className="flex justify-center gap-4 mb-6">
         {plans.map((plan, index) => (
           <button
@@ -65,7 +40,7 @@ const PaymentPlans = () => {
         ))}
       </div>
 
-      {/* Información del plan */}
+      {/* Información del plan seleccionado */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

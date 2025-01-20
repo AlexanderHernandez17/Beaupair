@@ -5,6 +5,42 @@ import PaymentPlans from "@/components/opcionesPago";
 import { subtitle, title } from "@/components/primitives";
 import WhatsAppButton from "@/components/whatsappButton";
 
+const paymentPlansData = [
+  {
+    name: "WHITE",
+    total: "$3.800.000",
+    payments: [
+      { title: "Matrícula y Test de Inglés", amount: "$600.000" },
+      {
+        title: "Activación de Perfil y Oficialización de Match",
+        amount: "$3.200.000",
+      },
+    ],
+  },
+  {
+    name: "PINK",
+    total: "$4.500.000",
+    payments: [
+      { title: "Matrícula y Test de Inglés", amount: "$600.000" },
+      { title: "Activación de Perfil", amount: "$1.300.000" },
+      { title: "Oficialización del Match", amount: "$1.300.000" },
+      { title: "Pago Final", amount: "$1.300.000" },
+    ],
+  },
+  {
+    name: "PURPLE",
+    total: "$5.900.000",
+    payments: [
+      { title: "Matrícula y Test de Inglés", amount: "$600.000" },
+      { title: "Iniciación Curso de Inglés", amount: "$1.400.000" },
+      { title: "Activación de Perfil", amount: "$1.250.000" },
+      { title: "Oficialización del Match", amount: "$1.250.000" },
+      { title: "Pago Final", amount: "$1.400.000" },
+    ],
+  },
+];
+
+
 
 export default function HomeUsa() {
 
@@ -92,7 +128,7 @@ export default function HomeUsa() {
          </div>
 
          <div className="flex flex-col items-center justify-center mt-12">
-         <PaymentPlans/>
+         <PaymentPlans plans={paymentPlansData} />
          </div>
 
         
