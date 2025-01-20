@@ -6,7 +6,39 @@ import { subtitle, title } from "@/components/primitives";
 import WhatsAppButton from "@/components/whatsappButton";
 
 
-export default function Home() {
+export default function HomeUsa() {
+
+  const items = [
+    {
+      title: "Un ingreso semanal mínimo de $195.75 USD",
+      image: "/ingreso.jpg",
+    },
+    {
+      title: "Hospedaje y alimentación",
+      image: "/home.jpg",
+    },
+    {
+      title: "Bono educativo de $500 USD",
+      image: "/study.jpg",
+    },
+    {
+      title: "Dos semanas de vacaciones remuneradas al año",
+      image: "/vacaciones.jpg",
+    },
+    {
+      title: "Tiempo libre para explorar Estados Unidos y hacer amigos de todo el mundo",
+      image: "/freetime.jpg",
+    },
+    {
+      title: "Seguro médico completo",
+      image: "/doctor.jpg",
+    },
+    {
+      title: "Un tiquete aéreo de ida y regreso incluido",
+      image: "/tiquet.jpg",
+    },
+  ];
+  
 
   return (
     <div className=" flex flex-col min-h-screen ">
@@ -29,7 +61,7 @@ export default function Home() {
          </div>
 
          <div className="flex flex-col space-y-4 mt-16">
-          <LogrosComponent/>
+         <LogrosComponent items={items} />
          </div>
 
         <div className="flex flex-col items-center justify-center mt-16">

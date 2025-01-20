@@ -9,9 +9,9 @@ export const title = tv({
       blue: "from-[#5EA2EF] to-[#0072F5]",
       cyan: "from-[#00b7fa] to-[#01cfea]",
       green: "from-[#6FEE8D] to-[#17c964]",
-      pink: "from-[#FF72E1] to-[#F54C7A]",
+      pink: "from-[#FF90E6] to-[#F87896]", // Colores pink ajustados
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
-      purple: "from-[#9B4DFF] to-[#7E2B9F]", // Color purple agregado
+      purple: "from-[#B380FF] to-[#9E65D1]", // Colores purple ajustados
     },
     size: {
       sm: "text-3xl lg:text-4xl",
@@ -35,12 +35,13 @@ export const title = tv({
         "green",
         "pink",
         "foreground",
-        "purple", // Agregar "purple" a la lista
+        "purple",
       ],
       class: "bg-clip-text text-transparent bg-gradient-to-b",
     },
   ],
 });
+
 
 export const subtitle = tv({
   base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full",

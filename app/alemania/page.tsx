@@ -1,9 +1,43 @@
 'use Client';
+import CardGrid from "@/components/card";
 import LogrosComponent from "@/components/logra";
+import PaymentPlans from "@/components/opcionesPago";
 import { subtitle, title } from "@/components/primitives";
 import WhatsAppButton from "@/components/whatsappButton";
 
-export default function AlemaniaPage() {
+export default function AlemaniaHome() {
+
+  const items = [
+    {
+      title: "Un ingreso semanal mínimo de $195.75 USD",
+      image: "/ingreso.jpg",
+    },
+    {
+      title: "Hospedaje y alimentación",
+      image: "/home.jpg",
+    },
+    {
+      title: "Bono educativo de $500 USD",
+      image: "/study.jpg",
+    },
+    {
+      title: "Dos semanas de vacaciones remuneradas al año",
+      image: "/vacaciones.jpg",
+    },
+    {
+      title: "Tiempo libre para explorar Estados Unidos y hacer amigos de todo el mundo",
+      image: "/freetime.jpg",
+    },
+    {
+      title: "Seguro médico completo",
+      image: "/doctor.jpg",
+    },
+    {
+      title: "Un tiquete aéreo de ida y regreso incluido",
+      image: "/tiquet.jpg",
+    },
+  ];
+  
   return (
     <div className=" flex flex-col min-h-screen ">
 
@@ -24,10 +58,30 @@ export default function AlemaniaPage() {
          </div>
          </div>
 
+
          <div className="flex flex-col space-y-4 mt-16">
-          <LogrosComponent/>
+         <LogrosComponent items={items} />
          </div>
 
+         <div className="flex flex-col items-center justify-center mt-20">
+          <div className="max-w-xl text-center">
+          <span className={title({ color: "purple" })}>Requisitos ALEMANIA&nbsp;</span>
+         </div>
+         </div>
+
+         <div className="flex flex-col items-center justify-center mt-10">
+         <CardGrid/>
+         </div>
+
+         <div className="flex flex-col items-center justify-center mt-16">
+          <div className="max-w-xl text-center">
+          <span className={title({ color: "pink" })}>TE OFRECEMOS 3 MODALIDADES DE PAGO&nbsp;</span>
+         </div>
+         </div>
+
+         <div className="flex flex-col space-y-4 mt-16">
+        <PaymentPlans/>
+        </div>
         
         <div>
         <WhatsAppButton />

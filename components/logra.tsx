@@ -1,48 +1,22 @@
 "use client";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
-import { Card, CardHeader, CardBody } from '@nextui-org/react';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import { Card, CardHeader } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Image from 'next/image';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 interface CarruselProps {
   title: string;
   image: string;
 }
 
-const items = [
-  {
-    title: "un ingreso semanal mínimo de $195.75 USD",
-    imageUrl: "/ingreso.jpg", 
-  },
-  {
-    title: "Hospedaje y alimentación",
-    imageUrl: "/home.jpg",
-  },
-  {
-    title: "Bono educativo de $500 USD",
-    imageUrl: "/study.jpg",
-  },
-  {
-    title: "Dos semanas de vacaciones remuneradas al año",
-    imageUrl: "/vacaciones.jpg",
-  },
-  {
-    title: "Tiempo libre para explorar Estados Unidos y hacer amigos de todo el mundo",
-    imageUrl: "/freetime.jpg",
-  },
-  {
-    title: "Seguro médico completo",
-    imageUrl: "/doctor.jpg",
-  },
-  {
-    title: "Un tiquete aéreo de ida y regreso incluido",
-    imageUrl: "/tiquet.jpg",
-  },
-];
+interface LogrosComponentProps {
+  items: CarruselProps[];
+}
 
 const Carrusel: React.FC<CarruselProps> = ({ title, image }) => {
   return (
@@ -73,7 +47,7 @@ const Carrusel: React.FC<CarruselProps> = ({ title, image }) => {
   );
 };
 
-export default function LogrosComponent() {
+const LogrosComponent: React.FC<LogrosComponentProps> = ({ items }) => {
   return (
     <div className="w-full">
       <Swiper
@@ -83,20 +57,18 @@ export default function LogrosComponent() {
         pagination={{ clickable: true }}
         navigation
         breakpoints={{
-          640: { // configuración para pantallas pequeñas (móviles)
-            slidesPerView: 1,
-          },
-          1024: { // configuración para pantallas grandes (escritorio)
-            slidesPerView: 3,
-          },
+          640: { slidesPerView: 1 },
+          1024: { slidesPerView: 3 },
         }}
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <Carrusel title={item.title} image={item.imageUrl} />
+            <Carrusel title={item.title} image={item.image} />
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
-}
+};
+
+export default LogrosComponent;
